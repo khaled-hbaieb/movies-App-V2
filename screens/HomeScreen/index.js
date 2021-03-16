@@ -51,11 +51,19 @@ export default class HomeScreen extends React.Component {
                         <Image style={{ width: 40, height: 40, borderRadius: 40/2 }}
                             source={{uri:(url)}}
                             />
-                            <Text style={{ fontWeight:'bold'}} >Profile</Text>
                         </View>
-                        <View  style={{marginRight: 10,textAlign:"center", alignItems: "center"}}><MaterialIcons name="logout" size={24} color="black" onPress={() => firebase.auth().signOut()} /><Text onPress={() => firebase.auth().signOut()} style={{fontWeight:'bold'}} >Log out</Text></View>
+                        <View  style={{marginRight: 10,textAlign:"center", alignItems: "center"}} onPress={() => firebase.auth().signOut()}>
+                            <MaterialIcons name="logout" size={24} color="black" onPress={() => firebase.auth().signOut()} />
+                        </View>
                     </View>
                   ),
+                  headerTitle: (
+                    <View  onPress={() => {
+                        console.log('clicked')
+                        navigate('Profile',{email: email, displayName: displayName})}}>
+                        <Image source={require('../../assets/images/logo.jpg')} style={{ width: 40, height: 40 }}/>
+                    </View>
+                  )
         } 
     }
     

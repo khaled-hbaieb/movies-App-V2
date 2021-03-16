@@ -27,7 +27,7 @@ const MoviesHomeScreen = () => {
         AsyncStorage.getAllKeys()
     .then((keys)=> AsyncStorage.multiGet(keys)
                     .then((data) => {
-                        console.log('dataaaa',data,'dataaaaaa')
+                        // console.log('dataaaa',data,'dataaaaaa')
                         setDataStorage(data)
                     }));
     }
