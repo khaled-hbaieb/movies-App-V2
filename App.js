@@ -6,6 +6,8 @@ import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
 import * as firebase from 'firebase'
 import Profile from './screens/Profile'
+import MoviesHomeScreen from './screens/MoviesHomeScreen'
+import TvShowsHomeScreen from './screens/TvShowsHomeScreen'
 
 
 
@@ -25,7 +27,9 @@ firebase.initializeApp(firebaseConfig);
 
 const AppStack = createStackNavigator({
   Home: HomeScreen,
-  Profile: Profile
+  Profile: Profile,
+  MoviesHomeScreen: MoviesHomeScreen,
+  TvShowsHomeScreen: TvShowsHomeScreen
 })
 
 const AuthStack = createStackNavigator({

@@ -9,8 +9,8 @@ import { AntDesign } from '@expo/vector-icons';
 export default function Profile(props) {
     const [image, setImage] = useState(null);
     const [url, setUrl] = useState(null);
-    const email = props.navigation.state.params.email
-    const displayName = props.navigation.state.params.displayName
+    // const email = props.navigation.state.params.email
+    // const displayName = props.navigation.state.params.displayName
     useEffect(() => {
         (async () => {
           if (Platform.OS !== 'web') {
@@ -58,8 +58,8 @@ export default function Profile(props) {
                 <Image  source={url !== null ? {uri : url} :  require('../../assets/images/default.jpg')} style={styles.image}></Image>
             </View>
             <View style={styles.infoContainer} >
-                <Text style={[styles.text, {fontWeight: "200"}]}>Email: {email}</Text>
-                <Text style={styles.text}>Name: {displayName}</Text>
+                {/* <Text style={[styles.text, {fontWeight: "200"}]}>Email: {email}</Text>
+                <Text style={styles.text}>Name: {displayName}</Text> */}
                 <AntDesign style={styles.add} name="pluscircle" size={24} color="black" onPress={pickImage} size={48} />
             </View>
         </View>
